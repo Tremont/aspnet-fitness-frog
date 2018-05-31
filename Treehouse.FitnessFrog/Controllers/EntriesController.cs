@@ -39,7 +39,8 @@ namespace Treehouse.FitnessFrog.Controllers
             return View(entries);
         }
 
-        public ActionResult Add()
+        public ActionResult Add(DateTime? date, int? activityId, double? duration, Entry.IntensityLevel?
+            intensity, bool? exclude, string notes)
         {
             if (Request.HttpMethod == "Post")
             {
@@ -52,19 +53,7 @@ namespace Treehouse.FitnessFrog.Controllers
             
         }
 
-        [ActionName("Add"), HttpPost]
-        public ActionResult AddPost()
-        {
-            if (Request.HttpMethod == "Post")
-            {
-                return View();
-            }
-            else
-            {
-                return View();
-            }
-
-        }
+      
 
         public ActionResult Edit(int? id)
         {
